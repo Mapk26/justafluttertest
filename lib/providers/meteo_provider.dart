@@ -13,7 +13,6 @@ class MeteoProvider{
 
   Future<MeteoModel> fetchData(double lat, double lon) async {
 
-    print('fetching data');
 
     //https://api.darksky.net/forecast/47fd732fa3e7cad1f01bb386392566c9/45.46427,%209.18951?lang=it&%20unit=auto
     var response = await _client.get("https://api.darksky.net/forecast/47fd732fa3e7cad1f01bb386392566c9/$lat,$lon?lang=it");
@@ -23,7 +22,6 @@ class MeteoProvider{
       print(response.body.toString());
       MeteoModel meteo = MeteoModel.fromJson(json.decode(response.body));
 
-      print('meteo is $meteo');
 
       return meteo;
 

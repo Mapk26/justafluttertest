@@ -9,20 +9,25 @@ class MeteoModel{
 
   MeteoModel.fromJson(Map<String, dynamic> parsedJson){
 
-    print('parsing');
+    try{
 
-    lat = parsedJson['lat'];
-    lon = parsedJson['lon'];
-    timezone = parsedJson['timezone'];
+      lat = parsedJson['lat'];
+      lon = parsedJson['lon'];
+      timezone = parsedJson['timezone'];
 
-    print('timezone is $timezone');
+      print('timezone is $timezone');
 
-    if(parsedJson['currently']!=null){
+      if(parsedJson['currently']!=null){
 
-      print('parsing currently');
+        print('parsing currently');
 
-      currentlyModel = CurrentlyModel.fromJson(parsedJson['currently']);
+        currentlyModel = CurrentlyModel.fromJson(parsedJson['currently']);
+      }
+
+    }catch(e){
+      print('MeteoModel error: $e');
     }
+
   }
 
 }
