@@ -54,8 +54,8 @@ flutter:
     - sleet.png
     - rain.png
     - wind.png
-    - partycloudyday.png
-    - partycloudynight.png
+    - partlycloudyday.png
+    - partlycloudynight.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
